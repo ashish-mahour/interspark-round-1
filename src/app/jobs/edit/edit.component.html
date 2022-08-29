@@ -1,0 +1,59 @@
+<mat-toolbar>
+    <span>Update Job</span>
+</mat-toolbar>
+<div fxLayout="row wrap" fxLayoutAlign="center center">
+    <mat-card class="update-job-card" fxFlex="50">
+        <mat-card-content>
+            <form [formGroup]="jobForm" fxFlex="100" fxLayout="row wrap">
+                <div fxFlex="100">
+                    <mat-form-field appearance="standard">
+                        <mat-label>Job Number</mat-label>
+                        <input matInput formControlName="job_number">
+                    </mat-form-field>
+                </div>
+                <div fxFlex="100">
+                    <mat-form-field appearance="standard">
+                        <mat-label>Job Title</mat-label>
+                        <input matInput formControlName="job_title">
+                    </mat-form-field>
+                </div>
+                <div fxFlex="100">
+                    <mat-form-field appearance="standard">
+                        <mat-label>Start Date</mat-label>
+                        <input matInput [matDatepicker]="startDate" formControlName="job_start_date">
+                        <mat-hint>MM/DD/YYYY</mat-hint>
+                        <mat-datepicker-toggle matSuffix [for]="startDate"></mat-datepicker-toggle>
+                        <mat-datepicker #startDate></mat-datepicker>
+                    </mat-form-field>
+                </div>
+                <div fxFlex="100">
+                    <mat-form-field appearance="standard">
+                        <mat-label>Close Date</mat-label>
+                        <input matInput [matDatepicker]="closeDate" formControlName="job_close_date">
+                        <mat-hint>MM/DD/YYYY</mat-hint>
+                        <mat-datepicker-toggle matSuffix [for]="closeDate"></mat-datepicker-toggle>
+                        <mat-datepicker #closeDate></mat-datepicker>
+                    </mat-form-field>
+                </div>
+                <div fxFlex="100">
+                    <mat-checkbox formControlName="experience_required">Experience Required</mat-checkbox>
+                </div>
+                <div fxFlex="100">
+                    <mat-form-field appearance="standard">
+                        <mat-label>Openings</mat-label>
+                        <input matInput type="tel" formControlName="number_of_openings">
+                    </mat-form-field>
+                </div>
+                <div fxFlex="100">
+                    <mat-form-field appearance="standard">
+                        <mat-label>Notes</mat-label>
+                        <input matInput formControlName="job_notes">
+                    </mat-form-field>
+                </div>
+            </form>
+        </mat-card-content>
+        <mat-card-actions fxLayoutAlign="end center">
+            <button mat-raised-button color="warn" (click)="updateJob()">Submit</button>
+        </mat-card-actions>
+    </mat-card>
+</div>

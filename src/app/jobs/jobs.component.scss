@@ -1,0 +1,22 @@
+.table {
+    border: 1px solid black;
+    margin: 5px;
+}
+
+.table-header {
+    background: black;
+    color: whitesmoke;
+    font-weight: bold;
+    padding: 5px;
+}
+
+.table-row {
+    padding: 5px;
+}
+
+.no-data-row {
+    font-size: 2em;
+    font-weight: bold;
+    padding: 10px;
+    text-align: center;
+}

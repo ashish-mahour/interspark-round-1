@@ -1,0 +1,31 @@
+<mat-toolbar>
+    <span>Jobs</span>
+</mat-toolbar>
+<div fxLayout="row wrap">
+    <div class="table" fxLayout="row wrap" fxFlex="100">
+        <div class="table-header" fxFlex="100">
+            <div fxFlex="10">Job Number</div>
+            <div fxFlex="20">Title</div>
+            <div fxFlex="12.5">Start Date</div>
+            <div fxFlex="12.5">Close Date</div>
+            <div fxFlex="10">Experience Required</div>
+            <div fxFlex="10">Openings</div>
+            <div fxFlex="25">Notes</div>
+        </div>
+        <div *ngIf="!jobs || jobs.length === 0" class="no-data-row" fxFlex="100" fxLayoutAlign="center center">
+            No Data
+        </div>
+        <div [routerLink]="''+ job.id" class="table-row" fxFlex="100" *ngFor="let job of jobs">
+            <div fxFlex="10">{{job.job_number}}</div>
+            <div fxFlex="20">{{job.job_title}}</div>
+            <div fxFlex="12.5">{{job.job_start_date}}</div>
+            <div fxFlex="12.5">{{job.job_close_date}}</div>
+            <div fxFlex="10">{{job.experience_required ? "Yes": "No"}}</div>
+            <div fxFlex="10">{{job.number_of_openings}}</div>
+            <div fxFlex="25">{{job.job_notes}}</div>
+        </div>
+        <div class="table-row" fxFlex="100" fxLayoutAlign="start start">
+            <button mat-raised-button routerLink="new">Create New Job</button>
+        </div>
+    </div>
+</div>
